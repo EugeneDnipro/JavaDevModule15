@@ -1,0 +1,11 @@
+CREATE TABLE users (
+  user_id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  username VARCHAR(45) NOT NULL,
+  password VARCHAR(64) NOT NULL,
+  enabled TINYINT DEFAULT NULL
+);
+
+CREATE TABLE authorities (
+  username VARCHAR(45) NOT NULL PRIMARY KEY,
+  authority VARCHAR(45) NOT NULL
+);
