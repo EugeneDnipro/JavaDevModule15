@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title>Note List</title>
@@ -7,6 +8,14 @@
 </head>
 <body>
 <div class="container">
+    <form th:action="@{/logout}" method="post">
+        <div class="float-end">
+            <button type="submit" class="btn btn-info" style="text-align: right">Logout</button>
+        </div>
+    </form>
+    <div sec:authorize="isAuthenticated()">
+        <h4 class="text-primary float-end">Hello, <span sec:authentication="name"></span> &emsp;</h4>
+    </div><br>
     <h1>Add Note</h1>
     <form method="post" th:action="@{/note/new}" th:object="${note}">
         <div class="row">

@@ -15,5 +15,4 @@ public class JavaDevModule15Application {
         new FlywayConfigurations().setup().migrate();
         SpringApplication.run(JavaDevModule15Application.class, args);
     }
-
 }
